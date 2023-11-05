@@ -2,18 +2,6 @@ import pandas as pd
 import numpy as np
 import random
 
-"""end = False
-
-file_object = open("data.txt","w")
-file_object.close();
-
-while end == False:
-    #days(data.txt)
-    end = True
-
-df = pd.read_csv("SingleDay.csv")
-df = df[["Date", "Close"]]
-df = df[23:]"""
 
 
 def week():
@@ -31,7 +19,7 @@ def week():
                 count += 3
             ddf = pd.concat([ddf, df[count:count + 1]])
     print(ddf.to_string())
-    ddf.to_csv("data.csv", sep="\t", encoding="utf-8")
+    ddf.to_csv("data.csv", sep=",", encoding="utf-8")
 
 week()
 
