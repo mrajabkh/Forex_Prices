@@ -22,15 +22,16 @@ def week():
     count = 23
     ddf = df[count:count + 1]
     while count < 361: #120 per week, 360 for 3 weeks
-        for i in range(0,6):
-            ddf = pd.concat([ddf, df[count:count + 1]])  #write to file instead
-            if i < 4:
+        for i in range(0,5): #write to file instead
+            if i < 3:
                 count += 24
-            elif i == 4:
+            elif i == 3:
                 count += 21
-            elif i == 5:
+            elif i == 4:
                 count += 3
+            ddf = pd.concat([ddf, df[count:count + 1]])
     print(ddf.to_string())
+    ddf.to_csv("data.csv", sep="\t", encoding="utf-8")
 
 week()
 
